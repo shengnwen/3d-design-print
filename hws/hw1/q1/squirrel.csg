@@ -1,0 +1,17 @@
+group() {
+	difference() {
+		cube(size = [30, 30, 30], center = true);
+		sphere($fn = 0, $fa = 12, $fs = 2, r = 20);
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 20], [0, 0, 0, 1]]) {
+			cylinder($fn = 0, $fa = 12, $fs = 2, h = 40, r1 = 10, r2 = 10, center = false);
+		}
+	}
+	color([1, 0, 0, 1]) {
+		cube(size = [2, 3, 4], center = false);
+	}
+	color([0, 0, 1, 1]) {
+		multmatrix([[1, 0, 0, 3], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+			cube(size = [2, 3, 4], center = false);
+		}
+	}
+}
